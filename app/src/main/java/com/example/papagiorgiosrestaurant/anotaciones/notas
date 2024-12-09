@@ -1,0 +1,117 @@
+si hago dos aplicaciones diferentes implica el funcionamiento de hacer correr las dos aplicaciones y no se podra
+reutilizar los modelos y funciones comunes
+
+Usar todo en una aplicacion debe hacer que el registrar tenga la opcion de que el usuario decida ser un
+cliente o driver
+
+cuando se loguea el usuario verificara mediante el token si es cliente o driver
+
+si es cliente se le mostrara la pantalla de cliente
+si es driver se le mostrara la pantalla de driver
+
+common/
+├── auth/
+│   ├── LoginActivity.kt
+│   ├── RegisterActivity.kt
+│   ├── AuthViewModel.kt
+│   ├── AuthRepository.kt
+├── api/
+│   ├── repository/
+│       ├── RestaurantRepository.kt
+│       ├── OrderRepository.kt
+│       ├── DriverRepository.kt
+        ├── UserRepository.kt
+        ├── OrderDetails.kt
+        ├── RetrofitRepository.kt
+│   ├── ApiService.kt
+│   ├── TokenInterceptor.kt
+├── bindings/
+│   └── ViewBindings.kt
+├── models/
+│   ├── User.kt
+│   ├── Order.kt
+│   ├── Restaurant.kt
+│   ├── Product.kt
+│   ├── Driver.kt
+│   ├── OrderDetail.kt
+├── utils/
+│   ├── ViewUtils.kt
+│   ├── Constants.kt
+│   ├── Extensions.kt
+│   ├── RoleNavigator.kt
+client/
+├── ui/
+│   ├── MainActivity.kt
+│   ├── RestaurantListActivity.kt
+│   ├── RestaurantMenuActivity.kt
+│   ├── OrderStatusActivity.kt
+│   └── adapters/
+│       ├── RestaurantAdapter.kt
+│       ├── MenuAdapter.kt
+│       └── OrderAdapter.kt
+├── viewmodels/
+│   ├── RestaurantViewModel.kt
+│   ├── OrderViewModel.kt
+driver/
+├── ui/
+│   ├── MainActivity.kt
+│   ├── UnassignedOrdersActivity.kt
+│   ├── DriverMapActivity.kt
+│   └── OrderDetailsActivity.kt
+├── viewmodels/
+│   ├── DriverOrdersViewModel.kt
+│   ├── MapViewModel.kt
+
+
+17/11/24
+- Continuar con el metodo registrar usuario mediante el uso de los endPoints,
+por el momento se crea el usuario de manera statica
+
+*viewModelScope.launch Esta combinación te permite gestionar de manera eficiente
+ las corrutinas dentro del ciclo de vida de un ViewModel.
+ ** Corrutina: Permite ejecutar código de forma asíncrona (sin bloquear la interfaz de usuario).
+
+
+ 18/11/24
+ * Clase DTO (Data Object Transfer): Es un objeto que transporta datos entre procesos y se usa para
+ minimizar la cantidad de llamadas entre un cliente y un servidor y tambien para organizar los datos
+ que se envian entre ellos.
+
+
+
+21/11/24
+
+* Una posible forma de hacer el boton de añadir productos de modo que siga la siguiente secuencia:
+1. Habra un boton con el simbolos de +
+2. AL hacer click en el boton este se deshanilitara y se mostrara un boton con el simbolo de - y + y
+ al medio un contador se incrementara en 1
+3. Al hacer click en el boton con el simbolo de + se incrementara el contador en 1
+4. Al hacer click en el boton con el simbolo de - se decrementara
+5. Si el contador es 0 se deshabilitara el boton con el simbolo de - y + y se habilitara el boton con el simbolo de +
+y no se añadira el producto al carrito
+
+
+Tareas hoy 28/11/24
+
+* Seleccionar restaurantes y mostrar sus menus
+ - Crear el layout de la lista de menus [hecho]
+ - Crear el componente de los menus [hecho]
+ - Crear metodo OnClick y pasar el id del restaurante a la actividad de los menus [hecho]
+
+* Cargar la lista de productos
+
+
+Tarea hoy 4/12/24
+
+* Hacer las funciones del carrito
+    - Añadir productos al carrito
+    - Eliminar productos del carrito
+    - Mostrar la lista de productos del carrito
+    - Mostrar el total de la compra
+    - Hacer el pedido
+
+
+
+
+
+

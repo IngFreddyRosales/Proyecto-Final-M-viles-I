@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#1B2F24"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/logoRestaurant"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="#FFFFFF"
+        android:contentDescription="@null"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
+
+    <TextView
+        android:id="@+id/titleRestaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="16dp"
+        android:text="nombre restaurante"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/addressRestaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="4dp"
+        android:text="direccion restaurante"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        tools:ignore="HardcodedText" />
+</LinearLayout>
